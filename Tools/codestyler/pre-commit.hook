@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+CUR_DIR="$( dirname "${BASH_SOURCE[0]}" )"
+CUR_DIR="${CUR_DIR/\.git*/}"
+cd "${CUR_DIR}"
+
+REPO_ROOT="$(unset GIT_DIR; git rev-parse --show-toplevel)"
+
+CONFIG_FILE_C="${REPO_ROOT}/Tools/codestyler/lang-c.cfg"
+CONFIG_FILE_OC="${REPO_ROOT}/Tools/codestyler/lang-objc.cfg"
+CONFIG_FILE_JAVA="${REPO_ROOT}/Tools/codestyler/lang-java.cfg"
+EXE_PATH="${REPO_ROOT}/Tools/codestyler/uncrustify"
+
+cd "${REPO_ROOT}"
+
+# Loop through all the files of interest
+while IFS= read -rd '' GIT_STATUS
+do
+	IFS= read -rd '' FILE_PATH
+# format all the files
+#for FILE_PATH in "${REPO_ROOT}"/source/code/*
+#do
+
+	[ "$GIT_STATUS" == 'D' ] && continue
+
+	FILE_EXT="${FILE_PATH##*.}"
+	[ "$FILE_EXT" != 'h' ] &&
+    [ "$FILE_EXT" != 'c' ] &&
+    [ "$FILE_EXT" != "cpp" ] &&
+    [ "$FILE_EXT" != "cc" ] &&
+    [ "$FILE_EXT" != 'm' ] &&
+    [ "$FILE_EXT" != "java" ] && continue
+    case $FILE_EXT in
+        [c] ) # C code [.c]
+            echo "Formatting C source code..."
+	        "$EXE_PATH" -l C -c "$CONFIG_FILE_C" --no-backup --mtime "$FILE_PATH" 2>&1 || true
+	        rm "${FILE_PATH}.uncrustify" >/dev/null 2>&1 || true
+	        git add "$FILE_PATH"
+            ;;
+        "cpp" | "cc" )
+            echo "Formatting C++ source code..."
+	        "$EXE_PATH" -l C++ -c "$CONFIG_FILE_C" --no-backup --mtime "$FILE_PATH" 2>&1 || true
+	        rm "${FILE_PATH}.uncrustify" >/dev/null 2>&1 || true
+	        git add "$FILE_PATH"
+            ;;
+        [hm] ) # Object-C code [.m, .h]
+            echo "Formatting Object-C source code..."
+	        "$EXE_PATH" -l OC -c "$CONFIG_FILE_OC" --no-backup --mtime "$FILE_PATH" 2>&1 || true
+	        rm "${FILE_PATH}.uncrustify" >/dev/null 2>&1 || true
+	        git add "$FILE_PATH"
+            ;;
+        "java" )
+            echo "Formatting JAVA source code..."
+	        "$EXE_PATH" -l JAVA -c "$CONFIG_FILE_JAVA" --no-backup --mtime "$FILE_PATH" 2>&1 || true
+	        rm "${FILE_PATH}.uncrustify" >/dev/null 2>&1 || true
+	        git add "$FILE_PATH"
+            ;;
+        * )
+            echo "Unknown source code found: $FILE_PATH"
+            ;;
+    esac
+done < <(git diff --cached --name-status -z)
+echo "Done"

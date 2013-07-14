@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+CUR_DIR="$( dirname "${BASH_SOURCE[0]}" )"
+REPO_ROOT=$( cd "$CUR_DIR/../../" && pwd )
+
+for cmd in "${REPO_ROOT}"/Tools/git-hooks/pre-commit.cmds/*
+do
+    . "$cmd"
+done
