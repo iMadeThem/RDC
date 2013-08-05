@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3569B6701792A5F500AC5A4B /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3569B66F1792A5F500AC5A4B /* Quartz.framework */; };
+		358A8DEA179447C50008260A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CDE2061791A2AE00791095 /* AppKit.framework */; };
 		35CDE2041791A2AE00791095 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CDE2031791A2AE00791095 /* Cocoa.framework */; };
 		35CDE20E1791A2AE00791095 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CDE20C1791A2AE00791095 /* InfoPlist.strings */; };
 		35CDE2101791A2AE00791095 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CDE20F1791A2AE00791095 /* main.m */; };
 		35CDE2141791A2AE00791095 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 35CDE2121791A2AE00791095 /* Credits.rtf */; };
-		35CDE2171791A2AE00791095 /* RDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CDE2161791A2AE00791095 /* RDAppDelegate.m */; };
+		35CDE2171791A2AE00791095 /* RDAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35CDE2161791A2AE00791095 /* RDAppDelegate.mm */; };
 		35CDE21A1791A2AE00791095 /* RemoteDLSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CDE2181791A2AE00791095 /* RemoteDLSR.xib */; };
 		35CDE2221791A2AE00791095 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CDE2211791A2AE00791095 /* SenTestingKit.framework */; };
 		35CDE2231791A2AE00791095 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CDE2031791A2AE00791095 /* Cocoa.framework */; };
@@ -43,7 +44,7 @@
 		35CDE2111791A2AE00791095 /* RemoteDLSR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RemoteDLSR-Prefix.pch"; sourceTree = "<group>"; };
 		35CDE2131791A2AE00791095 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		35CDE2151791A2AE00791095 /* RDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDAppDelegate.h; sourceTree = "<group>"; };
-		35CDE2161791A2AE00791095 /* RDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDAppDelegate.m; sourceTree = "<group>"; };
+		35CDE2161791A2AE00791095 /* RDAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RDAppDelegate.mm; sourceTree = "<group>"; };
 		35CDE2191791A2AE00791095 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RemoteDLSR.xib; sourceTree = "<group>"; };
 		35CDE2201791A2AE00791095 /* RemoteDLSRTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteDLSRTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CDE2211791A2AE00791095 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358A8DEA179447C50008260A /* AppKit.framework in Frameworks */,
 				3569B6701792A5F500AC5A4B /* Quartz.framework in Frameworks */,
 				35CDE2041791A2AE00791095 /* Cocoa.framework in Frameworks */,
 			);
@@ -135,7 +137,7 @@
 				3503D8D0179294AC0055FBC9 /* Resources */,
 				3503D8CF17928B110055FBC9 /* Views */,
 				35CDE2151791A2AE00791095 /* RDAppDelegate.h */,
-				35CDE2161791A2AE00791095 /* RDAppDelegate.m */,
+				35CDE2161791A2AE00791095 /* RDAppDelegate.mm */,
 				35CDE2181791A2AE00791095 /* RemoteDLSR.xib */,
 				35CDE20A1791A2AE00791095 /* Supporting Files */,
 			);
@@ -283,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35CDE2101791A2AE00791095 /* main.m in Sources */,
-				35CDE2171791A2AE00791095 /* RDAppDelegate.m in Sources */,
+				35CDE2171791A2AE00791095 /* RDAppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

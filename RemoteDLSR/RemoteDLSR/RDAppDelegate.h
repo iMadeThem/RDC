@@ -7,10 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <AppKit/NSImageView.h>
 
 @interface RDAppDelegate : NSObject<NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSImageView *imagePreview;
 
 // capture buttons
 @property (assign) IBOutlet NSButton *btnCapture;
@@ -45,6 +47,9 @@
 - (IBAction) onClickCaptureBtn:(id) sender;
 - (IBAction) onClickTetheredBtn:(id) sender;
 - (IBAction) onClickTimeLapseBtn:(id) sender;
+
+// pick file to show
+- (IBAction) onClickPickPhotoBtn:(id) sender;
 
 // Camera tab
 // Settings tab

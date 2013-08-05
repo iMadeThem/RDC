@@ -1361,7 +1361,7 @@
 							<string key="NSFrame">{{110, 753}, {110, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="232184382"/>
+							<reference key="NSNextKeyView" ref="989921184"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="8790828">
@@ -1385,7 +1385,7 @@
 							<string key="NSFrame">{{1073, 752}, {113, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="255839450"/>
+							<reference key="NSNextKeyView" ref="70285725"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="97175583">
@@ -2409,7 +2409,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 												<int key="NSvFlags">264</int>
 												<string key="NSFrame">{{146, 213}, {129, 32}}</string>
 												<reference key="NSSuperview" ref="558001278"/>
-												<reference key="NSNextKeyView" ref="392516145"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="268057535">
@@ -2936,6 +2935,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 												<string key="NSFrame">{{277, 7}, {46, 32}}</string>
 												<reference key="NSSuperview" ref="85265394"/>
 												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="392516145"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="656290556">
@@ -3106,6 +3106,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string key="NSFrame">{{380, 20}, {800, 720}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="925723187"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:24</string>
 							<float key="zoomFactor">0.3125</float>
@@ -3132,6 +3133,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string key="NSFrame">{{20, 492}, {346, 248}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<nil key="composition"/>
@@ -3162,6 +3164,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<string key="NSFrame">{{392, 619}, {120, 108}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<nil key="composition"/>
@@ -3186,9 +3189,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<set class="NSMutableSet" key="NSDragTypes">
 								<string>NSFilenamesPboardType</string>
 							</set>
-							<string key="NSFrame">{{380, 750}, {263, 41}}</string>
+							<string key="NSFrame">{{332, 750}, {360, 40}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<nil key="composition"/>
@@ -4048,6 +4052,22 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<int key="connectionID">1805</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">onClickPickPhotoBtn:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="61886863"/>
+					</object>
+					<int key="connectionID">1811</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">imagePreview</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="244604773"/>
+					</object>
+					<int key="connectionID">1812</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -4581,8 +4601,8 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="61886863"/>
 							<reference ref="70285725"/>
 							<reference ref="232184382"/>
-							<reference ref="989921184"/>
 							<reference ref="925723187"/>
+							<reference ref="989921184"/>
 						</array>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -6370,7 +6390,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1810</int>
+			<int key="maxID">1813</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6397,12 +6417,17 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="onClickCaptureBtn:">id</string>
+						<string key="onClickPickPhotoBtn:">id</string>
 						<string key="onClickTetheredBtn:">id</string>
 						<string key="onClickTimeLapseBtn:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="onClickCaptureBtn:">
 							<string key="name">onClickCaptureBtn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="onClickPickPhotoBtn:">
+							<string key="name">onClickPickPhotoBtn:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="onClickTetheredBtn:">
@@ -6423,6 +6448,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<string key="exposureMode">NSWindow</string>
 						<string key="flashMode">NSWindow</string>
 						<string key="focusMode">NSWindow</string>
+						<string key="imagePreview">NSImageView</string>
 						<string key="imageQuality">NSWindow</string>
 						<string key="imageSize">NSWindow</string>
 						<string key="labelDetectedCamara">NSTextField</string>
@@ -6464,6 +6490,10 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<object class="IBToOneOutletInfo" key="focusMode">
 							<string key="name">focusMode</string>
 							<string key="candidateClassName">NSWindow</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imagePreview">
+							<string key="name">imagePreview</string>
+							<string key="candidateClassName">NSImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="imageQuality">
 							<string key="name">imageQuality</string>
