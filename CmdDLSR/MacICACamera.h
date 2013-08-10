@@ -26,6 +26,8 @@
 #include <string>
 #include <inttypes.h>
 
+//class RDCCamera;
+
 class MacICACamera : public RDCCamera
 {
     public:
@@ -77,14 +79,14 @@ class MacICACamera : public RDCCamera
  * This class is derived from MacICACamera for handling cameras that lack of
  * capture capabilities.
  */
-class MacICABlackList : public MacICACamera
+class MacICAMuteCamera : public MacICACamera
 {
     private:
         friend void MacICACamera::scanDevices_(void);
         MacICABlackList(ICAObject device);
 
     public:
-        ~MacICABlackList();
+        ~MacICAMuteCamera();
 
         CaptureResponse_t captureImage(void);
 };

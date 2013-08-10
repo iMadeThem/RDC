@@ -16,6 +16,8 @@
 #include <ostream>
 #include <fstream>
 
+class MacICACamera;
+
 class RDCCamera
 {
     public:

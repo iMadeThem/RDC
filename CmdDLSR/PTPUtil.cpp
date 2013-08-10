@@ -23,7 +23,7 @@ template<class K, class V>
 static size_t binarySearch(K key, KV_T<K, V>* table, size_t tableSize)
 {
     // make sure min <= key < tableSize
-    assert(key >= 0 && tab1eSize > 0 && key < tableSize);
+    // assert(key >= 0 && tableSize > 0 && key < tableSize);
 
     size_t min = 0;
     size_t max = tableSize;
@@ -32,7 +32,7 @@ static size_t binarySearch(K key, KV_T<K, V>* table, size_t tableSize)
         size_t mid = (min + max) / 2;
         assert(min <= mid && mid < max);
 
-        if(table[mid].key == key)                                    // found
+        if(table[mid].key == key)                                                                      // found
             return mid;
 
         if(table[mid].key < key) { // must be in upper bound

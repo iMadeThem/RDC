@@ -9,37 +9,41 @@
 
 # build target specs
 CC = g++
-CFLAGS = -O3 
+CFLAGS = -Wall -W
+INCPATH = -I. -I/System/Library/Frameworks/ImageCaptureCore.framework/Headers
 OUT_DIR = release_build
-LIBS =
+LIBS = -framework ImageCaptureCore
 
+SOURCES = PTPCamera.cpp \
+	PTPUtil.cpp
+
+OBJECTS =
 # first target entry is the target invoked when typing 'make'
 default: CmdDLSR
+	@test -d $(OUT_DIR) || mkdir -p $(OUT_DIR)
 
 CmdDLSR: $(OUT_DIR)/PTPCamera.cpp.o $(OUT_DIR)/PTPUtil.cpp.o $(OUT_DIR)/RDCCamera.cpp.o
 	@echo -n 'Linking CmdDLSR... '
-	@$(CC) $(CFLAGS) -o CmdDLSR $(OUT_DIR)/PTPCamera.cpp.o $(OUT_DIR)/PTPUtil.cpp.o $(OUT_DIR)/RDCCamera.cpp.o $(LIBS)
+	@$(CC) $(CFLAGS) $(INCPATH) -o CmdDLSR $(OUT_DIR)/PTPCamera.cpp.o $(OUT_DIR)/PTPUtil.cpp.o $(OUT_DIR)/RDCCamera.cpp.o $(LIBS)
 	@echo Done.
 
-$(OUT_DIR)/PTPCamera.cpp.o: PTPCamera.cpp PTPCamera.h PTPUtil.h \
-  RDCCamera.h
+$(OUT_DIR)/PTPCamera.cpp.o: PTPCamera.cpp PTPCamera.h PTPUtil.h RDCCamera.h
 	@echo -n 'Compiling PTPCamera.cpp... '
-	@$(CC) $(CFLAGS) -o $(OUT_DIR)/PTPCamera.cpp.o -c PTPCamera.cpp
+	@$(CC) $(CFLAGS) $(INCPATH) -o $(OUT_DIR)/PTPCamera.cpp.o -c PTPCamera.cpp
 	@echo Done.
 
 $(OUT_DIR)/PTPUtil.cpp.o: PTPUtil.cpp PTPUtil.h
 	@echo -n 'Compiling PTPUtil.cpp... '
-	@$(CC) $(CFLAGS) -o $(OUT_DIR)/PTPUtil.cpp.o -c PTPUtil.cpp
+	@$(CC) $(CFLAGS) $(INCPATH) -o $(OUT_DIR)/PTPUtil.cpp.o -c PTPUtil.cpp
 	@echo Done.
 
-$(OUT_DIR)/RDCCamera.cpp.o: RDCCamera.cpp RDCCamera.h MacICACamera.h \
-  PTPCamera.h
+$(OUT_DIR)/RDCCamera.cpp.o: RDCCamera.cpp RDCCamera.h MacICACamera.h PTPCamera.h
 	@echo -n 'Compiling RDCCamera.cpp... '
-	@$(CC) $(CFLAGS) -o $(OUT_DIR)/RDCCamera.cpp.o -c RDCCamera.cpp
+	@$(CC) $(CFLAGS) $(INCPATH) -o $(OUT_DIR)/RDCCamera.cpp.o -c RDCCamera.cpp
 	@echo Done.
 
 run:
-	./CmdDLSR 
+	./CmdDLSR
 
 debug:
 	gdb ./CmdDLSR

@@ -146,6 +146,12 @@ class PTPCamera
         PTPCamera();
         virtual ~PTPCamera() = 0;
 
+        // Standard PTP operation.
+        // Return:
+        //   true: the operation is supported, resultCode is set from device.
+        //  false: the operation is not supported, resultCode is untouched.
+        bool ptpInitiateCapture(uint32_t& resultCode);
+
         // Get device information from the camera by sending
         // a command to the device and processing the response.
         uint32_t ptpGetDeviceInfo(void);
@@ -167,13 +173,7 @@ class PTPCamera
         std::string ptpDeviceVersion() const;
         std::string ptpSerialNumber() const;
 
-        float ptpBatteryLevel();
-
-        // Standard PTP operation.
-        // Return:
-        //   true: the operation is supported, resultCode is set from device.
-        //  false: the operation is not supported, resultCode is untouched.
-        bool ptpInitiateCapture(uint32_t& resultCode);
+        int ptpBatteryLevel();
 
         // Map a PTP code to a descriptive string. The PTP code may be
         // any of a variety of codes, and the std::string is a human

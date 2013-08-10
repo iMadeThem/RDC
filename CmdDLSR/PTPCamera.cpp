@@ -252,7 +252,7 @@ string PTPCamera::ptpSerialNumber() const
     return serialNumber_;
 }
 
-float PTPCamera::ptpBatteryLevel()
+int PTPCamera::ptpBatteryLevel()
 {
     uint32_t rc;
     // Get the PTP standard BatteryLevel property value.
@@ -286,13 +286,14 @@ float PTPCamera::ptpBatteryLevel()
 
     uint8_t use_val = val.getUint8();
     if(use_val >= val_max)
-        return 100.0;
+        return 100;
     if(use_val <= val_min)
-        return 0.0;
+        return 0;
 
     use_val -= val_min;
     val_max -= val_min;
-    return (use_val * 100.0) / (val_max * 1.0);
+    //return (use_val * 100.0) / (val_max * 1.0);
+    return (int) (use_val / val_max);
 }
 
 vector<string> PTPCamera::ptpGetOperationsList() const
@@ -429,7 +430,7 @@ int PTPCamera::ptpGetPropertyEnum(unsigned prop_code, vector<LabeledValue_t>& ta
     if(info == devicePropertiesSupportedMap_.end())
         return -1;
 
-    if(info->second.formFlag != 2)                                     // ENUM
+    if(info->second.formFlag != 2)                                                                        // ENUM
         return -1;
 
     table.resize(info->second.range.size());
@@ -491,7 +492,7 @@ bool PTPCamera::ptpGetPropertyIsRange(unsigned prop_code, PropertyValue_t& min, 
     if(info == devicePropertiesSupportedMap_.end())
         return false;
 
-    if(info->second.formFlag != 1)                                     // This method only works with RANGE types
+    if(info->second.formFlag != 1)                                                                        // This method only works with RANGE types
         return false;
 
     assert(info->second.range.size() == 3);
