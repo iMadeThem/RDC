@@ -14,11 +14,11 @@
 		35CDE2101791A2AE00791095 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CDE20F1791A2AE00791095 /* main.m */; };
 		35CDE2141791A2AE00791095 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 35CDE2121791A2AE00791095 /* Credits.rtf */; };
 		35CDE2171791A2AE00791095 /* RDAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35CDE2161791A2AE00791095 /* RDAppDelegate.mm */; };
-		35CDE21A1791A2AE00791095 /* RemoteDLSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35CDE2181791A2AE00791095 /* RemoteDLSR.xib */; };
 		35CDE2221791A2AE00791095 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CDE2211791A2AE00791095 /* SenTestingKit.framework */; };
 		35CDE2231791A2AE00791095 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CDE2031791A2AE00791095 /* Cocoa.framework */; };
 		35CDE22B1791A2AE00791095 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35CDE2291791A2AE00791095 /* InfoPlist.strings */; };
 		35CDE22E1791A2AE00791095 /* RemoteDLSRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CDE22D1791A2AE00791095 /* RemoteDLSRTests.m */; };
+		CB9CD9BA17B6299D0098F168 /* RDCMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9CD9B917B6299D0098F168 /* RDCMain.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,13 +45,13 @@
 		35CDE2131791A2AE00791095 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		35CDE2151791A2AE00791095 /* RDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDAppDelegate.h; sourceTree = "<group>"; };
 		35CDE2161791A2AE00791095 /* RDAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RDAppDelegate.mm; sourceTree = "<group>"; };
-		35CDE2191791A2AE00791095 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RemoteDLSR.xib; sourceTree = "<group>"; };
 		35CDE2201791A2AE00791095 /* RemoteDLSRTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteDLSRTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CDE2211791A2AE00791095 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		35CDE2281791A2AE00791095 /* RemoteDLSRTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RemoteDLSRTests-Info.plist"; sourceTree = "<group>"; };
 		35CDE22A1791A2AE00791095 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		35CDE22C1791A2AE00791095 /* RemoteDLSRTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteDLSRTests.h; sourceTree = "<group>"; };
 		35CDE22D1791A2AE00791095 /* RemoteDLSRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteDLSRTests.m; sourceTree = "<group>"; };
+		CB9CD9B917B6299D0098F168 /* RDCMain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RDCMain.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,7 @@
 				3503D8CF17928B110055FBC9 /* Views */,
 				35CDE2151791A2AE00791095 /* RDAppDelegate.h */,
 				35CDE2161791A2AE00791095 /* RDAppDelegate.mm */,
-				35CDE2181791A2AE00791095 /* RemoteDLSR.xib */,
+				CB9CD9B917B6299D0098F168 /* RDCMain.xib */,
 				35CDE20A1791A2AE00791095 /* Supporting Files */,
 			);
 			path = RemoteDLSR;
@@ -249,7 +249,7 @@
 			files = (
 				35CDE20E1791A2AE00791095 /* InfoPlist.strings in Resources */,
 				35CDE2141791A2AE00791095 /* Credits.rtf in Resources */,
-				35CDE21A1791A2AE00791095 /* RemoteDLSR.xib in Resources */,
+				CB9CD9BA17B6299D0098F168 /* RDCMain.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,14 +322,6 @@
 				35CDE2131791A2AE00791095 /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		35CDE2181791A2AE00791095 /* RemoteDLSR.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				35CDE2191791A2AE00791095 /* en */,
-			);
-			name = RemoteDLSR.xib;
 			sourceTree = "<group>";
 		};
 		35CDE2291791A2AE00791095 /* InfoPlist.strings */ = {
